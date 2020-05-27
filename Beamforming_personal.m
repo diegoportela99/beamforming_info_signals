@@ -90,12 +90,12 @@ nonintended_BER = nonintended_receiver_error/(2 * symbol_count);
 close all
 figure
 hold on
-semilogy(signal_to_noise,intended_BER,'p-g','LineWidth',2); % MISO (intended - BF)
-semilogy(signal_to_noise,nonintended_BER,'-r*','LineWidth',2); % MISO (Eve - BF)
+semilogy(signal_to_noise,intended_BER,'.-c','LineWidth',1); % MISO (intended - BF)
+semilogy(signal_to_noise,nonintended_BER,'-ro','LineWidth',1); % MISO (non intended - BF)
 axis([-25 35 10^-5 1])
 grid on
 title('QPSK Bit Error Rate (BER) - Beamforming');
-legend('intended (nTx=2, nRx=1, no BF)','non intended (nTx=2, nRx=1, no BF)','intended (nTx=2, nRx=1, Tx BF)','Eve (nTx=2, nRx=1, Tx BF)');
+legend('intended (nTx=2, nRx=1, Tx BF)','non intended (nTx=2, nRx=1, Tx BF)');
 xlabel('SNR (dB)');
 ylabel('Bit Error Rate (BER)');
 
